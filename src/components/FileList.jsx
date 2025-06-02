@@ -43,6 +43,11 @@ const loadFiles =  async()=>{
         Select File
       </button>
       </div>
+      {!files.length>0 && 
+      <div className='flex items-center justify-center text-center text-gray-500'>
+        Select a Folder or files to scan bulk of ressume
+      </div>
+      }
      
       <div className="grid grid-cols-8 gap-4 mt-4">
         {files.map((file, index) => (

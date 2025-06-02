@@ -1,12 +1,13 @@
 import { useState, memo } from 'react';
 import Home from './components/Home'; // You can assign this to Dashboard or another tab as needed
+import FileList from './components/FileList';
 
 // ==================== Memoized Components ====================
 
 // Dashboard – Overview of jobs, candidates, and activity
-const DashboardTab = memo(() => <div>Dashboard content Overview of stats – open jobs, applications received, hires, etc.
+const DashboardTab = memo(() => 
   <Home/>
-</div>);
+);
 
 // Jobs – Job postings, status, and management
 const JobsTab = memo(() => <div>Jobs management Create, edit, publish, and manage job postings.</div>);
@@ -41,6 +42,8 @@ const TeamTab = memo(() => <div>Team settings Team – Roles, permissions, and t
 // Settings – App configurations and integrations
 const SettingsTab = memo(() => <div>Settings panel</div>);
 
+//Scan - scan a bulk of files and filter
+const ScannerTab = memo(()=><div className='p-4'><FileList/></div>)
 // ==================== Tab Definitions ====================
 
 const tabs = [
@@ -56,6 +59,7 @@ const tabs = [
   { label: "Talent Pool", component: TalentPoolTab },
   { label: "Team", component: TeamTab },
   { label: "Settings", component: SettingsTab },
+  { label:"Scan", component: ScannerTab }
 ];
 
 // ==================== Main App Component ====================
